@@ -26,7 +26,6 @@ The models were evaluated based on multiple metrics. **Logistic Regression** ach
 ![Feature Importance](outputs/feature_importance.png)
 
 ## Screenshots
-*(Note: Create a folder named `screenshots` in `outputs/` and add your screenshots here)*
 
 ### 1. Dataset Overview & EDA
 ![EDA Dashboard](outputs/screenshots/eda_dashboard.png)
