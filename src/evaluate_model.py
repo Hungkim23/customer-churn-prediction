@@ -73,10 +73,14 @@ def plot_feature_importance(model, preprocessor, output_dir):
     """Plot and save feature importance if the model supports it."""
     ensure_dir(output_dir)
     try:
+        importances = None
         # Check if the model has feature_importances_
         if hasattr(model, 'feature_importances_'):
             importances = model.feature_importances_
+        elif hasattr(model, 'coef_'):
+            importances = np.abs(model.coef_[0])
             
+        if importances is not None:
             # Extract feature names from ColumnTransformer
             cat_encoder = preprocessor.named_transformers_['cat'].named_steps['onehot']
             cat_features = cat_encoder.get_feature_names_out()
@@ -93,5 +97,7 @@ def plot_feature_importance(model, preprocessor, output_dir):
             plt.tight_layout()
             plt.savefig(os.path.join(output_dir, 'feature_importance.png'))
             plt.close()
+        else:
+            print("Model does not support feature_importances_ or coef_")
     except Exception as e:
         print(f"Could not plot feature importance: {e}")
