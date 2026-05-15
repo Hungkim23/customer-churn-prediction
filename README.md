@@ -1,6 +1,6 @@
 # Customer Churn Prediction Dashboard
 
-![App Overview](outputs/screenshots/app_overview.png) *(Note: Please replace with your actual screenshot)*
+![App Overview](outputs/screenshots/app_overview.png) 
 
 ## Project Overview
 This project is an end-to-end Machine Learning web application designed to predict customer churn using the Telco Customer Churn dataset. It features a complete pipeline from data processing to model evaluation, wrapped in an interactive Streamlit dashboard. 
